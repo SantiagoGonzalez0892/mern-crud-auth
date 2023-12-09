@@ -27,9 +27,28 @@ The modules used in the client are:
 Clone the project
 
 ``` bash
- git clone (url)
+ git clone https://github.com/SantiagoGonzalez0892/mern-crud-auth
 ```
 
+Go to project directory
+
 ```bash
-  cd Todos-nodejs
+  cd mern-crud-auth
+```
+
+Install backend packages
+
+```bash
+  npm install / npm i
+```
+Go to client directory
+
+```bash
+  cd client
+```
+
+Install client packages
+
+```bash
+  npm install / npm i
 ```
