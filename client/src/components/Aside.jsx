@@ -1,13 +1,15 @@
 import { styled } from "styled-components";
 import { useTheme } from '../context/themeContext';
 import { useAuth } from '../context/authContext';
-import {Col, Row} from "./styledComponents/styledComponents";
+import { Col, Row} from "./styledComponents/styledComponents";
 import Avatar1 from "./avatars/Avatar1";
 import Avatar2 from "./avatars/Avatar2";
 import Avatar3 from "./avatars/Avatar3";
 import Avatar4 from "./avatars/Avatar4";
 import {useEffect, useState} from "react";
 import UserAvatar from "./UserAvatar";
+import Title from "./Title";
+import Paragraph from "./Paragraph";
 
 
 const AsideStyled = styled.aside`
@@ -27,9 +29,6 @@ const Card = styled.div`
 `;
 const Left = styled.div`
   display: inline-block;
-
-  p { font-size: .9rem; }
-  h2 { font-size: 1.2rem; }
 `;
 const Right = styled.div`
   background: #40A8F5;
@@ -38,7 +37,6 @@ const Right = styled.div`
   border-radius: 50%;
 `;
 
-const P = styled.p`font-size: 0.7rem;`;
 const Span = styled.span`
   display: inline-block;
   height: 18px;
@@ -71,11 +69,11 @@ function Aside ({ tasks }) {
   return (
     <AsideStyled $colors={colors}>
 
-      <Card $colors={colors} >
+      <Card $colors={colors} $padding="20px" >
         <Row $justify="space-between">
           <Left>
-            <p>Hello,</p>
-            <h2>{user.username}</h2>
+            <Paragraph fontSize="0.9rem">Hello,</Paragraph>
+            <Title fontSize="1.2rem">{user.username}</Title>
           </Left>
           <Right>
             <UserAvatar width="110px" height="110px" color="white"/>
@@ -86,17 +84,17 @@ function Aside ({ tasks }) {
       <Card $colors={colors}>
         <Row>
           <Col>
-            <P>Total tasks</P>
+            <Paragraph fontSize="0.7rem">Total tasks</Paragraph>
             <Span $colors={colors} $color="#40A8F5">{metrics.totalTasks}</Span>
           </Col>
           <Col>
-            <P>Completed tasks</P>
+            <Paragraph fontSize="0.7rem">Completed tasks</Paragraph>
             <Span $colors={colors} $color="#4fbb4f">{metrics.completedTasks}</Span>
           </Col>
         </Row>
         <Row $margin="20px 0 0 0">
           <Col>
-            <P>Pending tasks</P>
+            <Paragraph fontSize="0.7rem">Pending tasks</Paragraph>
             <Span $colors={colors} $color="red">{metrics.pendingTasks}</Span>
           </Col>
         </Row>

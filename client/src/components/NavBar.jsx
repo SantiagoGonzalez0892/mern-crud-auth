@@ -3,38 +3,35 @@ import { useAuth } from "../context/authContext";
 import { styled } from "styled-components";
 import { useTheme } from "../context/themeContext";
 import Switch from "./Switch";
-import Avatar1 from "./avatars/Avatar1";
-import Avatar2 from "./avatars/Avatar2";
-import Avatar3 from "./avatars/Avatar3";
-import Avatar4 from "./avatars/Avatar4";
 import { FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
 import UserAvatar from "./UserAvatar";;
 
 
 const NavStyled = styled.nav`
-  background: ${({$colors}) => $colors.bg_Secondary};
-  color: ${({$colors}) => $colors.textColor};
   padding: 16px 22px;
   display: flex;
   justify-content: space-between;
-  box-shadow: 0 0 10px ${({$colors}) => $colors.shadowColor};
+  box-shadow: 0 0 10px ${props => props.$colors.shadowColor};
+  background: ${props => props.$colors.bg_Secondary};
+  color: ${props => props.$colors.textColor};
 `;
+
+
 const UlStyled = styled.ul`
   display: flex;
   align-items: center;
-  gap: 20px;
-
   & button {
     border: none;
     background: unset;
     color: unset;
   }
 `;
+
+
 const NavLinkStyled = styled(NavLink)`
   position: relative;
   padding: 3px 8px;
-
   &.active::after {
     content: '';
     width: 60%;
@@ -49,21 +46,15 @@ const NavLinkStyled = styled(NavLink)`
 `;
 
 
-
-
-
-
 const UserButton = styled.div`
   padding: 0 8px;
   display: flex;
   align-items: center;
   cursor: pointer;
   position: relative;
-
   p {
     padding: 0 8px;
   }
-
   .arrow {
     transition: transform .3s;
   }
@@ -72,37 +63,30 @@ const UserButton = styled.div`
   }
 `;
 
+
 const Desplegable = styled.div`
-  background: ${({$colors}) => $colors && $colors.bg_Secondary};
-  box-shadow: 0 0 10px ${({$colors}) => $colors && $colors.shadowColor};
+  background: ${props => props.$colors && props.$colors.bg_Secondary};
+  box-shadow: 0 0 10px ${props => props.$colors && props.$colors.shadowColor};
   width: 100%;
   height: 0px;
   overflow: hidden;
   border-radius: 8px;
   transition: height .3s;
   cursor: default;
-
-
   position: absolute;
   top: 57px;
   left: 0;
-
   ul {
     margin: 20px;
-
     li {
       margin: 10px 0;
       display: flex;
-
       button, a {
         width: 100%;
         text-align: start;
       }
     }
   }
-
-  
-
   &.desplegado {
     height: 100px;
   }
@@ -144,36 +128,27 @@ function NavBar () {
         </li>
       </UlStyled>
       <UlStyled>
-        {!user ? (
+        {!user ? 
           <>
             <li><NavLinkStyled to="/register" >Register</NavLinkStyled></li>
             <li><NavLinkStyled to="/login" >Login</NavLinkStyled></li>
           </>
-        ) : (
-          <>
-            <UserButton onClick={changeDesplegado} className={desplegado && 'desplegado'}>
-              <UserAvatar width="40px" height="40px" color="#40A8F5"/>
-              <p>{user.username}</p>
-              <FaChevronDown className="arrow" />
+        :
+          <UserButton onClick={changeDesplegado} className={desplegado && 'desplegado'}>
+            <UserAvatar width="40px" height="40px" color="#40A8F5"/>
+            <p>{user.username}</p>
+            <FaChevronDown className="arrow" />
 
+            <Desplegable className={desplegado && 'desplegado'} $colors={colors}>
+              <ul>
+                <li><Link to="/profile" >Perfil</Link></li>
+                <li><button onClick={logout}>Logout</button></li>
+              </ul>
+            </Desplegable>
 
-
-
-              <Desplegable className={desplegado && 'desplegado'} $colors={colors}>
-                <ul>
-                  <li><Link to="/profile" >Perfil</Link></li>
-                  <li><button onClick={logout}>Logout</button></li>
-                </ul>
-              </Desplegable>
-
-
-
-
-
-            </UserButton>
-          </>
-        )}
-              </UlStyled>
+          </UserButton>
+        }
+      </UlStyled>
     </NavStyled>
   );
 }

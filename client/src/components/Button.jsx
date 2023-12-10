@@ -11,17 +11,17 @@ const ButtonStyled = styled.button`
   gap: 10px;
 
   border: none;
-  border-radius: ${({$borderr}) => $borderr ? $borderr : '30px'};
+  border-radius: ${props => props.$borderr};
 
   &:disabled {
-    background: ${({$colors}) => $colors && $colors.disabled};
+    background: ${props => props.$colors.disabled};
     cursor: default;
   }
 `;
 
 
 
-function Button ({ background, color, text, icon, event, prevent, borderr, disabled }) {
+function Button ({ background, color, text, icon, event, prevent, disabled, borderr }) {
   const { colors } = useTheme();
   const handleClick = (e) => {
     if (prevent) e.preventDefault();

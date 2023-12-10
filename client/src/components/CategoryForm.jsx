@@ -1,17 +1,17 @@
-import { BackgroundModal, Card, Input, Row } from "./styledComponents/styledComponents";
+import { BackgroundModal, Card, CardHeader, Input, Row } from "./styledComponents/styledComponents";
+import { useEffect, useState } from "react";
 import { IoMdSend } from "react-icons/io";
-import { FaTimes } from "react-icons/fa";
 import { useTheme } from "../context/themeContext";
-import Button from "./Button";
+import { FaTimes } from "react-icons/fa";
 import { styled } from "styled-components";
-import {useEffect, useState} from "react";
+import Button from "./Button";
+import Title from "./Title";
 
 
 const Circle = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-
   &.selected {
     border: 1px solid;
     transform: scale(1.4)
@@ -53,18 +53,33 @@ function CategoryForm ({ createCategory, changeCategoryModal }) {
 
   return (
     <BackgroundModal $colors={colors}>
-      <Card $colors={colors} width="300px" $margin="auto" $padding="20px" $borderr="8px" $position="absolute" $center="true">
-        <Row $justify="space-between" $margin="0 0 20px 0">
-          <h2>Add category</h2>
+      <Card 
+        $colors={colors} 
+        width="300px" 
+        $margin="auto" 
+        $padding="20px" 
+        $borderr="8px" 
+        $position="absolute" 
+        $center="true"
+      >
+        <CardHeader>
+          <Title>Add category</Title>
           <FaTimes onClick={() => changeCategoryModal(false)}/>
-        </Row>
+        </CardHeader>
+
         <form action="" onSubmit={handleSubmit}>
           <Row>
-            <Input type="text" placeholder="Category" $colors={colors} onChange={changeValue} $outline={true} />
+            <Input 
+              type="text" 
+              placeholder="Category" 
+              $colors={colors} 
+              onChange={changeValue} 
+              $outline={true} 
+            />
             <Button icon={<IoMdSend />} color="#40A8F5" />
           </Row>
         </form>
-        <Row $margin="20px 0 0 0">
+        <Row>
           <Circle onClick={changeColor} className={datos.selected.blue && 'selected'} id="blue" />
           <Circle onClick={changeColor} className={datos.selected.red && 'selected'} id="red" />
           <Circle onClick={changeColor} className={datos.selected.green && 'selected'} id="green" />
@@ -74,6 +89,7 @@ function CategoryForm ({ createCategory, changeCategoryModal }) {
           <Circle onClick={changeColor} className={datos.selected.pink && 'selected'} id="pink" />
           <Circle onClick={changeColor} className={datos.selected.orange && 'selected'} id="orange" />
         </Row>
+
       </Card>
     </BackgroundModal>
   );

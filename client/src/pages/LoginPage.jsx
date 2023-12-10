@@ -2,12 +2,13 @@ import { useForm } from 'react-hook-form';
 import {useNavigate} from 'react-router-dom';
 import {loginRequest} from '../api/auth';
 import Button from '../components/Button';
-import InputError from '../components/InputError';
-import {Input, Row, Card} from '../components/styledComponents/styledComponents';
+import {Input, Row, Card, CardBody} from '../components/styledComponents/styledComponents';
 import {useAuth} from '../context/authContext';
 import {useTheme} from '../context/themeContext';
-import { AuthPageStyled, Separator, FormTitle } from '../components/styledComponents/formComponents.styled';
+import { AuthPageStyled, Separator } from '../components/styledComponents/formComponents.styled';
 import LoginSVG from '/login.svg';
+import Title from '../components/Title';
+import Paragraph from '../components/Paragraph';
 
 
 function LoginPage () {
@@ -34,9 +35,9 @@ function LoginPage () {
     <AuthPageStyled>
       <Card $padding="20px" $borderr="8px" $margin="15px auto 0 auto" $colors={colors}>
         <Row>
-          <div>
+          <CardBody style={{ width: '350px', height: '100%' }}>
             <form action="" onSubmit={onSubmit}>
-              <FormTitle>Sing in</FormTitle>
+              <Title fontSize="1.5rem" color="#40A8F5" margin="0 0 20px 0">Sing in</Title>
               <Separator>
                 <label htmlFor="email">Email</label>
                 <Input 
@@ -45,7 +46,7 @@ function LoginPage () {
                   placeholder="Email" 
                   {...register('email', { required: true })} $colors={colors} $outline={true}
                 />
-                {errors.email && <InputError message="Invalid field"/>}
+                {errors.email && <Paragraph fontSize="0.85rem" color="#ee2200">Invalid field</Paragraph>}
               </Separator>
               <Separator>
                 <label htmlFor="email">Email</label>
@@ -55,11 +56,11 @@ function LoginPage () {
                   placeholder="Password" 
                   {...register('password', { required: true })} $colors={colors} $outline={true}
                 />
-                {errors.password && <InputError message="Invalid field"/>}
+                {errors.email && <Paragraph fontSize="0.85rem" color="#ee2200">Invalid field</Paragraph>}
               </Separator>
               <Button text="Login" background="#40A8F5" borderr="4px"/>
             </form>
-          </div>
+          </CardBody>
           <img src={LoginSVG} alt="" width="485px" />
         </Row>
       </Card>

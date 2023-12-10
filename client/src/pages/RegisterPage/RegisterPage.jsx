@@ -1,31 +1,25 @@
-import { useForm } from "react-hook-form";
-import { registerRequest } from "../../api/auth";
-import Button from "../../components/Button";
-import InputError from "../../components/InputError";
-import {Card, Input, Row} from "../../components/styledComponents/styledComponents";
-import {useAuth} from "../../context/authContext";
-import { useTheme } from "../../context/themeContext";
-import RegisterSVG from '/register.svg';
-import { styled } from "styled-components";
-import {useEffect, useState} from "react";
+import { Card, CardBody, Input, Row } from "../../components/styledComponents/styledComponents";
+import { Separator, AuthPageStyled } from '../../components/styledComponents/formComponents.styled.js'
+import { useEffect, useState } from "react";
 import { IoMdCheckmarkCircle } from "react-icons/io";
+import { registerRequest } from "../../api/auth";
 import { PageVisualizer } from "./RegisterPage.style";
+import { useNavigate } from 'react-router-dom';
+import { useTheme } from "../../context/themeContext";
+import { useForm } from "react-hook-form";
+import { useAuth } from "../../context/authContext";
+import { styled } from "styled-components";
 import Avatar1 from "../../components/avatars/Avatar1";
 import Avatar2 from "../../components/avatars/Avatar2";
 import Avatar3 from "../../components/avatars/Avatar3";
 import Avatar4 from "../../components/avatars/Avatar4";
-import { useNavigate } from 'react-router-dom';
-import { Separator, AuthPageStyled, FormTitle } from '../../components/styledComponents/formComponents.styled.js'
+import RegisterSVG from '/register.svg';
+import Paragraph from "../../components/Paragraph";
+import Button from "../../components/Button";
+import Title from "../../components/Title";
 
 
-const FormSection = styled.div`
-  flex-shrink: 0;
-  padding: 1px;
-  width: 350px;
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-`;
+
 const Form = styled.form`
   width: 850px;
   display: flex;
@@ -143,31 +137,62 @@ function RegisterPage () {
 
               <FirstPage>
                 <Row>
-                  <FormSection>
-                    <FormTitle>Sign up</FormTitle>
+                  <CardBody>
+                    <Title fontSize="1.5rem" color="#40A8F5" margin="0 0 20px 0">Sign up</Title>
+
                     <Separator>
                       <label htmlFor="username">Username</label>
-                      <Input id="username" type="text" placeholder="Username" {...register('username', { required: true })} $colors={colors} $outline={true}/>
-                      {errors.username && <InputError message="Invalid field"/>}
+                      <Input 
+                        id="username" 
+                        type="text" 
+                        placeholder="Username" 
+                        {...register('username', { required: true })} $colors={colors} $outline={true}
+                      />
+                      {errors.username && 
+                        <Paragraph color="#ff0022" fontSize="0.85rem">Invalid field</Paragraph>
+                      }
                     </Separator>
+
                     <Separator>
                       <label htmlFor="email">Email</label>
-                      <Input id="email" type="email" placeholder="Email" {...register('email', { required: true })} $colors={colors} $outline={true} />
-                      {errors.email && <InputError message="Invalid field" />}
+                      <Input 
+                        id="email" 
+                        type="email" 
+                        placeholder="Email" 
+                        {...register('email', { required: true })} $colors={colors} $outline={true} 
+                      />
+                      {errors.email && 
+                        <Paragraph color="#ff0022" fontSize="0.85rem">Invalid field</Paragraph>
+                      }
                     </Separator>
+
                     <Separator>
                       <label htmlFor="password">Password</label>
-                      <Input id="password" type="password" placeholder="Password" {...register('password', { required: true })} $colors={colors} $outline={true} />
-                      {errors.password && <InputError message="Invalid field" />}
+                      <Input 
+                        id="password" 
+                        type="password" 
+                        placeholder="Password" 
+                        {...register('password', { required: true })} $colors={colors} $outline={true} 
+                      />
+                      {errors.password && 
+                        <Paragraph color="#ff0022" fontSize="0.85rem">Invalid field</Paragraph>
+                      }
                     </Separator>
-                    <Button text="Next" background="#40A8F5" borderr="4px" event={nextPage} prevent={true}/>
-                  </FormSection>
+
+                    <Button 
+                      text="Next" 
+                      background="#40A8F5" 
+                      borderr="4px" 
+                      event={nextPage} 
+                      prevent={true}
+                    />
+                  </CardBody>
                   <img src={RegisterSVG} alt="" width="485px" />
                 </Row>
               </FirstPage>
 
               <SecondPage>
-                <h2>Choose your avatar</h2>
+                <Title>Choose your avatar</Title>
                 <Row $justify="space-evenly">
                   <CardItem $borderr="8px" $colors={colors} $padding="20px" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar1')} className={avatar === 'avatar1' && 'selected'}>
                     <Avatar1 width="115px" height="115px" color="#40A8F5"/>

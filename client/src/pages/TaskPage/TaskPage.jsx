@@ -117,6 +117,9 @@ function TaskPage () {
   const changeFilter = (value) => {
     setFilter(value)
   }
+  const changeToEdit = () => {
+    setTaskForm({...taskForm, taskFormVisible: true, title: "Add task", btnText: "Add"});
+  }
 
 
   useEffect(() => {
@@ -145,16 +148,33 @@ function TaskPage () {
       <MainStyled>
 
         <Top $colors={colors}>
-          <SearchBox search={search} setSearch={setSearch} handleSearchChange={handleSearchChange} />
-          <Button icon={<FaPlus />} text="Add" background="#40A8F5" event={() => setTaskForm({...taskForm, taskFormVisible: true, title: "Add task", btnText: "Add"})} />
+          <SearchBox 
+            search={search} 
+            setSearch={setSearch} 
+            handleSearchChange={handleSearchChange} 
+          />
+          <Button 
+            icon={<FaPlus />} 
+            text="Add" 
+            background="#40A8F5" 
+            borderr="30px" 
+            event={changeToEdit} 
+          />
         </Top>
 
         <FilterBox categories={categories} filter={filter} changeFilter={changeFilter} />
 
         <TasksContainer>
-          {taskFiltered.map((task, key) => (
-            <TaskCard key={key} task={task} deleteTask={deleteTask} doneTask={doneTask} taskForm={taskForm} setTaskForm={setTaskForm} />
-          ))}
+          {taskFiltered.map((task, key) => 
+            <TaskCard 
+              key={key} 
+              task={task} 
+              deleteTask={deleteTask} 
+              doneTask={doneTask} 
+              taskForm={taskForm} 
+              setTaskForm={setTaskForm} 
+            />
+          )}
         </TasksContainer>
 
         {taskForm.taskFormVisible && <TaskForm 
@@ -168,7 +188,6 @@ function TaskPage () {
         />}
         
         <NoTask  taskFiltered={taskFiltered} filter={filter} tasks={tasks} />
-
       </MainStyled>
       <Aside tasks={tasks} />
     </TaskPageStyled>

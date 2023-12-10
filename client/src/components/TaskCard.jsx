@@ -1,11 +1,12 @@
-import { deleteTaskRequest, doneTaskRequest } from "../api/tasks";
-import {useTheme} from "../context/themeContext";
-import CategoryTag from "./CategoryTag";
-import {Card, Col, Row} from "./styledComponents/styledComponents";
+import { MdOutlineCheckBoxOutlineBlank, MdOutlineCheckBox } from "react-icons/md";
+import { useEffect, useState } from "react";
+import { Card, CardBody, CardFooter, CardHeader, Row } from "./styledComponents/styledComponents";
 import { FaTrashAlt } from "react-icons/fa";
 import { MdModeEdit } from "react-icons/md";
-import { MdOutlineCheckBoxOutlineBlank, MdOutlineCheckBox } from "react-icons/md";
-import {useEffect, useState} from "react";
+import { useTheme } from "../context/themeContext";
+import CategoryTag from "./CategoryTag";
+import Paragraph from "./Paragraph";
+import Title from "./Title";
 
 
 
@@ -40,26 +41,32 @@ function TaskCard ({task, deleteTask, doneTask, taskForm, setTaskForm }) {
   },[]);
 
 
-
   return (
-    <Card $colors={colors} $borderr="8px" $padding="20px" style={{fontSize: '0.82rem'}} className={task.done && 'checked'} >
-      <Row $margin="0 0 15px 0">
-        <Col>
-          <CategoryTag value={task.category_id.name} color={task.category_id.textColor} background={task.category_id.bgColor} />
-        </Col>
-        <Col style={{fontSize: '17px'}}>
-          <Row $justify="flex-end">
-            {task.done ? <MdOutlineCheckBox onClick={handleChecked} /> : <MdOutlineCheckBoxOutlineBlank onClick={handleChecked} />}
-            <MdModeEdit onClick={editTask} />
-            <FaTrashAlt onClick={() => deleteTask(task._id)} />
-          </Row>
-        </Col>
-      </Row>
-      <div className="card-body" style={{height: '100%'}}>
-        <h3 style={{ marginBottom: '5px' }}>{task.title}</h3>
-         <p>{task.description}</p>
-      </div>
-      <p style={{textAlign: 'end', margin: '15px 0 0 0'}}>{date}</p>
+    <Card $colors={colors} $borderr="8px" className={task.done && 'checked'} >
+      <CardHeader>
+        <CategoryTag 
+          value={task.category_id.name} 
+          color={task.category_id.textColor} 
+          background={task.category_id.bgColor} 
+        />
+        <Row $justify="end">
+          {task.done ? 
+            <MdOutlineCheckBox onClick={handleChecked} /> : 
+            <MdOutlineCheckBoxOutlineBlank onClick={handleChecked} />
+          }
+          <MdModeEdit onClick={editTask} />
+          <FaTrashAlt onClick={() => deleteTask(task._id)} />
+        </Row>
+      </CardHeader>
+
+      <CardBody>
+        <Title fontSize="0.82rem">{task.title}</Title>
+        <Paragraph fontSize="0.82rem">{task.description}</Paragraph>
+      </CardBody>
+
+      <CardFooter>
+        <Paragraph fontSize="0.78rem">{date}</Paragraph>
+      </CardFooter>
     </Card>
   );
 }

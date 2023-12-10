@@ -10,9 +10,11 @@ export const Input = styled.input`
   border-radius: 4px;
   padding: 7px 10px;
   font-weight: 300;
-  
-  &:focus { ${({$outline}) => $outline && 'outline: 1px solid #40A8F5;'} }
+  &:focus { 
+    ${({$outline}) => $outline && 'outline: 1px solid #40A8F5;'} 
+  }
 `;
+
 
 export const Row = styled.div`
   width: 100%;
@@ -26,6 +28,7 @@ export const Row = styled.div`
   background: ${({$background}) => $background && $background};
 `;
 
+
 export const Col = styled.div`
   flex-basis: 100px;
   flex-grow: 1;
@@ -35,30 +38,9 @@ export const Col = styled.div`
   background: ${({$background}) => $background && $background};
 `;
 
-export const Card = styled.div`
-  box-shadow: 0 0 10px ${({$colors}) => $colors && $colors.shadowColor};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: ${({width}) => width && width};
-  margin: ${({$margin}) => $margin && $margin};
-  padding: ${({$padding}) => $padding && $padding};
-  border-radius: ${({$borderr}) => $borderr && $borderr};
-  background: ${({$colors}) => $colors && $colors.bg_Secondary};
-  ${({$background}) => $background ? `background: ${$background};` : ''}
-  position: ${({$position}) => $position ? $position : 'relative'};
-  ${({$center}) => $center ? 'top: 50%; left: 50%; transform: translate(-50%, -50%);' : ''}
 
-  &.checked {
-    background: rgba(255, 255, 255, .2);
-    text-decoration: line-through;
-    color: grey;
-    & span {
-      background: grey !important;
-      color: black !important;
-    }
-  }
-`;
+
+
 
 export const Select = styled.select`
   background: ${({$colors}) => $colors && $colors.bg_Primary};
@@ -68,9 +50,11 @@ export const Select = styled.select`
   border-radius: 4px;
   padding: 7px 10px;
   font-weight: 300;
-
-  &:focus { ${({$outline}) => $outline && 'outline: 1px solid #40A8F5;'} }
+  &:focus { 
+    ${({$outline}) => $outline && 'outline: 1px solid #40A8F5;'} 
+  }
 `;
+
 
 export const Textarea = styled.textarea`
   background: ${({$colors}) => $colors && $colors.bg_Primary};
@@ -80,9 +64,11 @@ export const Textarea = styled.textarea`
   border-radius: 4px;
   padding: 7px 10px;
   font-weight: 300;
-
-  &:focus { ${({$outline}) => $outline && 'outline: 1px solid #40A8F5;'} }
+  &:focus { 
+    ${({$outline}) => $outline && 'outline: 1px solid #40A8F5;'} 
+  }
 `;
+
 
 export const BackgroundModal = styled.div`
   background: ${({$colors}) => $colors && $colors.bg_Transparent};
@@ -96,6 +82,7 @@ export const BackgroundModal = styled.div`
   left: 0;
 `;
 
+
 export const InputSubmit = styled.input`
   background: ${({$background}) => $background ? $background : 'transparent'};
   color: ${({color}) => color ? color : 'white'};
@@ -104,12 +91,67 @@ export const InputSubmit = styled.input`
   justify-content: center;
   align-items: center;
   gap: 10px;
-
   border: none;
   border-radius: 30px;
 `;
 
+
 export const SVG = styled.img`
   width: ${({width}) => width && width};
   height: ${({height}) => height && height};
+`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const Card = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: ${props => props.width && props.width};
+  margin: ${props => props.$margin && props.$margin};
+  background: ${props => props.$colors && props.$colors.bg_Secondary};
+  border-radius: ${props => props.$borderr && props.$borderr};
+  box-shadow: 0 0 10px ${props => props.$colors && props.$colors.shadowColor};
+  position: ${props => props.$position ? props.$position : 'relative'};
+  ${props => props.$background && `background: ${props.$background};`}
+  ${props => props.$center && 'top: 50%; left: 50%; transform: translate(-50%, -50%);'}
+  &.checked {
+    background: rgba(255, 255, 255, .2);
+    text-decoration: line-through;
+    color: grey;
+    & span {
+      background: grey !important;
+      color: black !important;
+    }
+  }
+`;
+
+export const CardHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const CardBody = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const CardFooter = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin: ${props => props.$margin && props.$margin};
 `;

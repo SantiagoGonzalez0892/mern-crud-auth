@@ -11,7 +11,6 @@ const Container = styled.div`
 const P = styled.p`
   font-size: 1.3rem;
   text-align: center;
-
   & span {
     display: inline-block;
     color: #40A8F5;
