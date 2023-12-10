@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import { useTheme } from "../context/themeContext";
 
 const Prueba = styled.div`
-  margin: 15px;
+  margin: 0.937rem;
 
   & ul {
     display: grid;
@@ -12,7 +12,7 @@ const Prueba = styled.div`
       text-align: center;
       border-bottom: 2px solid #c0c0c0;
       cursor: pointer;
-      padding: 0 10px;
+      padding: 0 0.625rem;
 
       &.selected {
         border-bottom: 2px solid #40A8F5;

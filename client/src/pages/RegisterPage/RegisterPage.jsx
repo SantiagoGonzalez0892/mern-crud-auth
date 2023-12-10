@@ -117,7 +117,7 @@ function RegisterPage () {
 
   return (
     <AuthPageStyled>
-      <Card $margin="50px auto" $padding="20px" $borderr="8px" $colors={colors} width="max-content">
+      <Card $margin="50px auto" $padding="1.25em" $borderr="8px" $colors={colors} width="max-content">
 
 
         <PageVisualizer $colors={colors}>
@@ -138,7 +138,7 @@ function RegisterPage () {
               <FirstPage>
                 <Row>
                   <CardBody>
-                    <Title fontSize="1.5rem" color="#40A8F5" margin="0 0 20px 0">Sign up</Title>
+                    <Title fontSize="1.5em" color="#40A8F5" margin="0 0 20px 0">Sign up</Title>
 
                     <Separator>
                       <label htmlFor="username">Username</label>
@@ -194,16 +194,16 @@ function RegisterPage () {
               <SecondPage>
                 <Title>Choose your avatar</Title>
                 <Row $justify="space-evenly">
-                  <CardItem $borderr="8px" $colors={colors} $padding="20px" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar1')} className={avatar === 'avatar1' && 'selected'}>
+                  <CardItem $borderr="8px" $colors={colors} $padding="1.25em" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar1')} className={avatar === 'avatar1' && 'selected'}>
                     <Avatar1 width="115px" height="115px" color="#40A8F5"/>
                   </CardItem>
-                  <CardItem $borderr="8px" $colors={colors} $padding="20px" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar2')} className={avatar === 'avatar2' && 'selected'}>
+                  <CardItem $borderr="8px" $colors={colors} $padding="1.25em" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar2')} className={avatar === 'avatar2' && 'selected'}>
                     <Avatar2 width="115px" height="115px" color="#40A8F5"/>
                   </CardItem>
-                  <CardItem $borderr="8px" $colors={colors} $padding="20px" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar3')} className={avatar === 'avatar3' && 'selected'}>
+                  <CardItem $borderr="8px" $colors={colors} $padding="1.25em" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar3')} className={avatar === 'avatar3' && 'selected'}>
                     <Avatar3 width="115px" height="115px" color="#40A8F5"/>
                   </CardItem>
-                  <CardItem $borderr="8px" $colors={colors} $padding="20px" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar4')} className={avatar === 'avatar4' && 'selected'}>
+                  <CardItem $borderr="8px" $colors={colors} $padding="1.25em" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar4')} className={avatar === 'avatar4' && 'selected'}>
                     <Avatar4 width="115px" height="115px" color="#40A8F5"/>
                   </CardItem>
                 </Row>

@@ -2,10 +2,6 @@ import { styled } from "styled-components";
 import { useTheme } from '../context/themeContext';
 import { useAuth } from '../context/authContext';
 import { Col, Row} from "./styledComponents/styledComponents";
-import Avatar1 from "./avatars/Avatar1";
-import Avatar2 from "./avatars/Avatar2";
-import Avatar3 from "./avatars/Avatar3";
-import Avatar4 from "./avatars/Avatar4";
 import {useEffect, useState} from "react";
 import UserAvatar from "./UserAvatar";
 import Title from "./Title";
@@ -14,7 +10,7 @@ import Paragraph from "./Paragraph";
 
 const AsideStyled = styled.aside`
   background: ${({$colors}) => $colors.bg_Secondary};
-  margin-top: 15px;
+  margin-top: 0.937rem;
   padding: 20px;
   border-radius: 8px 0 0 8px;
   width: 40%;
@@ -22,9 +18,12 @@ const AsideStyled = styled.aside`
   max-width: 350px;
   flex-shrink: 0;
   box-shadow: 0 0 10px ${({$colors}) => $colors.shadowColor};
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 const Card = styled.div`
-  padding: 20px 15px;
+  padding: 1.25rem 0.937rem;
   border-bottom: 1px solid ${props => props.$colors.borderColor};
 `;
 const Left = styled.div`
@@ -44,7 +43,7 @@ const Span = styled.span`
   font-size: 1.2rem;
   color: ${({$colors}) => $colors.color};
   border-left: 2px solid ${props => props.$color};
-  padding: 0 10px;
+  padding: 0 0.625rem;
 `;
 
 
@@ -69,7 +68,7 @@ function Aside ({ tasks }) {
   return (
     <AsideStyled $colors={colors}>
 
-      <Card $colors={colors} $padding="20px" >
+      <Card $colors={colors} $padding="1.25em" >
         <Row $justify="space-between">
           <Left>
             <Paragraph fontSize="0.9rem">Hello,</Paragraph>
@@ -92,7 +91,7 @@ function Aside ({ tasks }) {
             <Span $colors={colors} $color="#4fbb4f">{metrics.completedTasks}</Span>
           </Col>
         </Row>
-        <Row $margin="20px 0 0 0">
+        <Row $margin="1.25rem 0 0 0">
           <Col>
             <Paragraph fontSize="0.7rem">Pending tasks</Paragraph>
             <Span $colors={colors} $color="red">{metrics.pendingTasks}</Span>

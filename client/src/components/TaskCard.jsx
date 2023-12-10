@@ -60,12 +60,12 @@ function TaskCard ({task, deleteTask, doneTask, taskForm, setTaskForm }) {
       </CardHeader>
 
       <CardBody>
-        <Title fontSize="0.82rem">{task.title}</Title>
-        <Paragraph fontSize="0.82rem">{task.description}</Paragraph>
+        <Title fontSize="0.82em">{task.title}</Title>
+        <Paragraph fontSize="0.82em">{task.description}</Paragraph>
       </CardBody>
 
       <CardFooter>
-        <Paragraph fontSize="0.78rem">{date}</Paragraph>
+        <Paragraph fontSize="0.78em">{date}</Paragraph>
       </CardFooter>
     </Card>
   );

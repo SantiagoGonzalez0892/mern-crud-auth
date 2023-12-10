@@ -5,10 +5,8 @@ const Tag = styled.span`
   border-radius: 20px;
   padding: 3px 7px;
   font-weight: 400;
-  font-size: 13px;
-  max-width: 120px;
+  font-size: 0.8125em;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
   background: ${props => props.$background};
   color: ${props => props.$color};

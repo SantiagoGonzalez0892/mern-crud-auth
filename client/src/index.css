@@ -5,8 +5,8 @@
   padding: 0;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
-  font-size: unset;
 }
+
 
 
 
@@ -20,6 +20,7 @@ a:any-link {
 input, select, textarea {
   outline: none;
   resize: none;
+  font-size: 1em;
 }
 button, input[type=submit] {
   cursor: pointer;
@@ -33,4 +34,14 @@ label p {
 
 div, nav, input, aside {
   transition: background .3s, box-shadow .3s;
+}
+button {
+  font-size: 1em;
+}
+
+
+@media screen and (max-width: 900px) {
+  body {
+    font-size: 14px;
+  }
 }

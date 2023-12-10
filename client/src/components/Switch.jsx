@@ -11,12 +11,11 @@ const SwitchStyled = styled.div`
   cursor: pointer;
   transition: background .4s ease;
   position: relative;
-
   &::after {
     content: '';
     background: white;
-    width: 25px;
-    height: 25px;
+    width: 1.25em;
+    height: 1.25em;
     border: 1px solid rgba(0, 0, 0, .25);
     box-shadow: 0 0 3px rgba(0, 0, 0, .75);
     border-radius: 50%;
@@ -25,11 +24,11 @@ const SwitchStyled = styled.div`
     top: -1px;
     left: -1px;
   }
-
   &.actived {
     background: orange;
-
-    &::after { transform: translateX(100%); }
+    &::after { 
+      transform: translateX(100%); 
+    }
   }
 `;
 
@@ -37,8 +36,8 @@ const Span = styled.span`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 25px;
-  height: 25px;
+  width: 1.25em;
+  height: 1.25em;
   color: white;
 `;
 

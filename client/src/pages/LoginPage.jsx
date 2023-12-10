@@ -33,11 +33,11 @@ function LoginPage () {
 
   return (
     <AuthPageStyled>
-      <Card $padding="20px" $borderr="8px" $margin="15px auto 0 auto" $colors={colors}>
+      <Card $padding="1.25em" $borderr="8px" $margin="0.937rem auto 0 auto" $colors={colors}>
         <Row>
           <CardBody style={{ width: '350px', height: '100%' }}>
             <form action="" onSubmit={onSubmit}>
-              <Title fontSize="1.5rem" color="#40A8F5" margin="0 0 20px 0">Sing in</Title>
+              <Title fontSize="1.5em" color="#40A8F5" margin="0 0 1.25rem 0">Sing in</Title>
               <Separator>
                 <label htmlFor="email">Email</label>
                 <Input 
@@ -46,7 +46,7 @@ function LoginPage () {
                   placeholder="Email" 
                   {...register('email', { required: true })} $colors={colors} $outline={true}
                 />
-                {errors.email && <Paragraph fontSize="0.85rem" color="#ee2200">Invalid field</Paragraph>}
+                {errors.email && <Paragraph fontSize="0.85em" color="#ee2200">Invalid field</Paragraph>}
               </Separator>
               <Separator>
                 <label htmlFor="email">Email</label>
@@ -56,7 +56,7 @@ function LoginPage () {
                   placeholder="Password" 
                   {...register('password', { required: true })} $colors={colors} $outline={true}
                 />
-                {errors.email && <Paragraph fontSize="0.85rem" color="#ee2200">Invalid field</Paragraph>}
+                {errors.email && <Paragraph fontSize="0.85em" color="#ee2200">Invalid field</Paragraph>}
               </Separator>
               <Button text="Login" background="#40A8F5" borderr="4px"/>
             </form>

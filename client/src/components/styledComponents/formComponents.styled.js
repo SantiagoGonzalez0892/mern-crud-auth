@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 
 
 export const Separator = styled.div`
-  margin: 0 0 20px 0;
+  margin: 0 0 1.25rem 0;
   width: 100%;
 `;
 

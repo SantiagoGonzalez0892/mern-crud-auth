@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 
 export const PageVisualizer = styled.div`
-  margin: 0 auto 20px auto;
+  margin: 0 auto 1.25rem auto;
   display: inline-flex;
   align-items: center;
   
@@ -20,7 +20,7 @@ export const PageVisualizer = styled.div`
     position: relative;
     transition: background .7s;
 
-    svg { font-size: 22px; }
+    svg { font-size: 1.375rem; }
 
     &::after {
       content: '';

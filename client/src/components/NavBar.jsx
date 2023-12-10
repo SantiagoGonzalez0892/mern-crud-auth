@@ -9,18 +9,20 @@ import UserAvatar from "./UserAvatar";;
 
 
 const NavStyled = styled.nav`
-  padding: 16px 22px;
+  padding: 1rem 1.375rem;
   display: flex;
   justify-content: space-between;
   box-shadow: 0 0 10px ${props => props.$colors.shadowColor};
   background: ${props => props.$colors.bg_Secondary};
   color: ${props => props.$colors.textColor};
+  position: relative;
 `;
 
 
 const UlStyled = styled.ul`
   display: flex;
   align-items: center;
+  gap: 2em;
   & button {
     border: none;
     background: unset;
@@ -31,7 +33,6 @@ const UlStyled = styled.ul`
 
 const NavLinkStyled = styled(NavLink)`
   position: relative;
-  padding: 3px 8px;
   &.active::after {
     content: '';
     width: 60%;
@@ -51,7 +52,7 @@ const UserButton = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-  position: relative;
+  // position: relative;
   p {
     padding: 0 8px;
   }
@@ -61,25 +62,31 @@ const UserButton = styled.div`
   &.desplegado .arrow {
     transform: rotate(180deg)
   }
+  @media screen and (max-width: 900px) {
+    p, .arrow {
+      display: none;
+    }
+  }
 `;
 
 
 const Desplegable = styled.div`
   background: ${props => props.$colors && props.$colors.bg_Secondary};
   box-shadow: 0 0 10px ${props => props.$colors && props.$colors.shadowColor};
-  width: 100%;
+  width: max-content;
+  min-width: 150px;
   height: 0px;
   overflow: hidden;
   border-radius: 8px;
   transition: height .3s;
   cursor: default;
   position: absolute;
-  top: 57px;
-  left: 0;
+  top: 100%;
+  right: 0;
   ul {
-    margin: 20px;
+    margin: 1.25rem;
     li {
-      margin: 10px 0;
+      margin: 0.625rem 0;
       display: flex;
       button, a {
         width: 100%;
@@ -91,19 +98,6 @@ const Desplegable = styled.div`
     height: 100px;
   }
 `;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function NavBar () {

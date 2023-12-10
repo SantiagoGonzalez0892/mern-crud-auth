@@ -8,7 +8,8 @@ const ButtonStyled = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
+  font-size: 1em;
 
   border: none;
   border-radius: ${props => props.$borderr};
@@ -30,7 +31,13 @@ function Button ({ background, color, text, icon, event, prevent, disabled, bord
 
 
   return (
-    <ButtonStyled $colors={colors} color={color} $borderr={borderr} $background={background} onClick={handleClick} disabled={disabled}>
+    <ButtonStyled 
+      $colors={colors} 
+      color={color} 
+      $borderr={borderr} 
+      $background={background} 
+      onClick={handleClick} disabled={disabled}
+    >
       {icon && icon}
       {text && text}
     </ButtonStyled>

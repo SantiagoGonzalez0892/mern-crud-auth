@@ -6,20 +6,20 @@ export const TaskPageStyled = styled.div`
   & aside, & main { flex-grow: 1; }
 `;
 export const MainStyled = styled.main`
-  margin: 15px 0 0 0;
+  margin: 0.937rem 0 0 0;
   min-height: calc(100vh - 87px);
 `;
 export const TasksContainer = styled.div`
-  margin: 15px;
+  margin: 0.937rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 1.25rem;
   justify-content: center;
 `;
 export const Top = styled.div`
   background: ${({$colors}) => $colors.bg_Secondary};
-  margin: 0 15px;
-  padding: 14px 20px;
+  margin: 0 0.937rem;
+  padding: 0.937rem 1.25rem;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;

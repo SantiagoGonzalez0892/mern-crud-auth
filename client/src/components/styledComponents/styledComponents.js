@@ -20,7 +20,7 @@ export const Row = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 0.937rem;
   justify-content: ${({$justify}) => $justify && $justify};
   margin: ${({$margin}) => $margin && $margin};
   padding: ${({$padding}) => $padding && $padding};
@@ -114,11 +114,11 @@ export const SVG = styled.img`
 
 
 export const Card = styled.div`
-  padding: 20px;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 20px;
+  justify-content: start;
+  gap: 1.25rem;
   width: ${props => props.width && props.width};
   margin: ${props => props.$margin && props.$margin};
   background: ${props => props.$colors && props.$colors.bg_Secondary};

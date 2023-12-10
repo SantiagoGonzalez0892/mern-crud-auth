@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: center;
 `;
 const P = styled.p`
-  font-size: 1.3rem;
+  font-size: 1.3em;
   text-align: center;
   & span {
     display: inline-block;

@@ -8,7 +8,7 @@ import Avatar4 from "./avatars/Avatar4";
 
 const AvatarContainer = styled.div`
   width: min-content;
-  height: min-content;
+  height: ${props => props.height};
   border-radius: 50%;
 `;
 
@@ -17,7 +17,7 @@ function UserAvatar ({ width, height, color }) {
   const { user } = useAuth();
 
   return (
-    <AvatarContainer>
+    <AvatarContainer height={height}>
       {user.avatar === 'avatar1' ? (
         <Avatar1 width={width} height={height} color={color} />
       ) : user.avatar === 'avatar2' ? (

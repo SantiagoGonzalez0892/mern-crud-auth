@@ -57,7 +57,7 @@ function CategoryForm ({ createCategory, changeCategoryModal }) {
         $colors={colors} 
         width="300px" 
         $margin="auto" 
-        $padding="20px" 
+        $padding="1.25em" 
         $borderr="8px" 
         $position="absolute" 
         $center="true"

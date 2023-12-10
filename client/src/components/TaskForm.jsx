@@ -30,7 +30,7 @@ function TaskForm ({ categories, taskForm, closeModal,changeCategoryModal, creat
 
   return (
     <BackgroundModal $colors={colors}>
-      <Card $colors={colors} $margin="15px auto" $padding="20px" $borderr="8px" width="600px">
+      <Card $colors={colors} $margin="0.937rem auto" $padding="1.25em" $borderr="8px" width="600px">
 
         <CardHeader>
           <Title>{taskForm.title}</Title>
@@ -39,7 +39,7 @@ function TaskForm ({ categories, taskForm, closeModal,changeCategoryModal, creat
         
         <form action="">
           <CardBody>
-            <Row $margin="0 0 15px 0">
+            <Row $margin="0 0 0.937rem 0">
               <Col>
                 <label htmlFor="title">Title</label>
                 <Input 
@@ -90,7 +90,7 @@ function TaskForm ({ categories, taskForm, closeModal,changeCategoryModal, creat
             </Row>
           </CardBody>
 
-          <CardFooter $margin="20px 0 0 0">
+          <CardFooter $margin="1.25rem 0 0 0">
             <Button 
               text="Cancel" 
               color="grey" 
