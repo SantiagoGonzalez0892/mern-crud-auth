@@ -9,7 +9,6 @@
 
 
 
-
 li {
   list-style: none;
 }
@@ -31,7 +30,6 @@ label p {
   grid-auto-flow: column;
   grid-auto-columns: 100px;
 }
-
 div, nav, input, aside {
   transition: background .3s, box-shadow .3s;
 }
@@ -40,8 +38,133 @@ button {
 }
 
 
-@media screen and (max-width: 900px) {
+
+@media screen and (max-width: 768px) {
   body {
     font-size: 14px;
   }
+  .taskForm {
+    margin: 0 1.25em;
+  }
+}
+@media screen and (max-width: 576px) {
+  .taskForm__row {
+    flex-direction: column;
+  }
+  .taskForm__row div {
+    width: 100%;
+    flex-basis: unset;
+  }
+}
+
+
+
+.register__row .cardBody, 
+.login__row .cardBody {
+  flex-basis: 40%;
+  width: 40%;
+  max-width: 350px;
+  min-width: 250px;
+
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.register__row img, 
+.login__row img {
+  width: 56%;
+  max-width: 650px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+
+.register__row {
+  /* background: red; */
+  /* max-width: 500px; */
+  /* width: 50%; */
+  /* padding-right: 20px; */
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .register__row, 
+  .login__row {
+    flex-direction: column;
+  }
+  .register__row .cardBody,
+  .login__row .cardBody {
+    width: 100%;
+    max-width: unset;
+  }
+  .register__row img,
+  .login__row img {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.sliding-form {
+  width: 300px;
+  margin: 20px auto;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+
+.form-section {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.form-section:not(:first-child) {
+  transform: translateX(100%);
+}
+
+.avatars {
+  margin-top: 20px;
+}
+
+.avatar {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: lightblue;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.next-section, .prev-section {
+  display: block;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.next-section:hover, .prev-section:hover {
+  background-color: #0056b3;
 }

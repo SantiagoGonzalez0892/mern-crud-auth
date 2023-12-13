@@ -9,6 +9,7 @@ import UserAvatar from "./UserAvatar";;
 
 
 const NavStyled = styled.nav`
+  grid-column: 1 / 3;
   padding: 1rem 1.375rem;
   display: flex;
   justify-content: space-between;
@@ -62,7 +63,7 @@ const UserButton = styled.div`
   &.desplegado .arrow {
     transform: rotate(180deg)
   }
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 768px) {
     p, .arrow {
       display: none;
     }

@@ -13,12 +13,9 @@ const AsideStyled = styled.aside`
   margin-top: 0.937rem;
   padding: 20px;
   border-radius: 8px 0 0 8px;
-  width: 40%;
-  min-width: 280px;
-  max-width: 350px;
   flex-shrink: 0;
   box-shadow: 0 0 10px ${({$colors}) => $colors.shadowColor};
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;

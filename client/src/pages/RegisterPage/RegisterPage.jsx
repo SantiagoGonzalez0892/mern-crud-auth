@@ -3,12 +3,11 @@ import { Separator, AuthPageStyled } from '../../components/styledComponents/for
 import { useEffect, useState } from "react";
 import { IoMdCheckmarkCircle } from "react-icons/io";
 import { registerRequest } from "../../api/auth";
-import { PageVisualizer } from "./RegisterPage.style";
+import { PageVisualizer, CardItem, Slider, SliderContainer } from "./RegisterPage.style";
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from "../../context/themeContext";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../context/authContext";
-import { styled } from "styled-components";
 import Avatar1 from "../../components/avatars/Avatar1";
 import Avatar2 from "../../components/avatars/Avatar2";
 import Avatar3 from "../../components/avatars/Avatar3";
@@ -17,64 +16,6 @@ import RegisterSVG from '/register.svg';
 import Paragraph from "../../components/Paragraph";
 import Button from "../../components/Button";
 import Title from "../../components/Title";
-
-
-
-const Form = styled.form`
-  width: 850px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-
-
-const Slider = styled.div`
-  overflow: hidden;
-`;
-const PagesContainer = styled.div`
-  width: 850px;
-  display: flex;
-  transition: transform .4s ease;
-  
-  &.actived {
-    transform: translateX(-100%);
-  }
-`;
-const FirstPage = styled.div`
-  width: 850px;
-  flex-shrink: 0;
-`;
-const SecondPage = styled.div`
-  width: 850px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  h2 {
-    font-size: 1.3rem;
-    text-align: center;
-  }
-`;
-
-const CardItem = styled(Card)`
-  cursor: pointer;
-  transition: transform .25s;
-
-  &.selected {
-    border: 1px solid #40A8F5;
-    box-shadow: 0 0 10px #40A8F5cc;
-    transform: scale(1.1);
-  }
-
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
-
-
 
 
 
@@ -117,8 +58,7 @@ function RegisterPage () {
 
   return (
     <AuthPageStyled>
-      <Card $margin="50px auto" $padding="1.25em" $borderr="8px" $colors={colors} width="max-content">
-
+      <Card $margin="20px" $padding="1.25em" $borderr="8px" $colors={colors} width="max-content">
 
         <PageVisualizer $colors={colors}>
           <span className={page === 1 ? 'actual' : 'completed'}>
@@ -129,15 +69,14 @@ function RegisterPage () {
             {page > 2 && <IoMdCheckmarkCircle /> }
           </span>
         </PageVisualizer>
-        
-      
-        <Slider>
-          <Form action="" onSubmit={onSubmit} >
-            <PagesContainer className={page === 2 && "actived"}>
 
-              <FirstPage>
-                <Row>
-                  <CardBody>
+
+        <SliderContainer>
+          <form action="" onSubmit={onSubmit}>
+            <Slider className={page === 2 && 'actived'}>
+              <li>
+                <Row className="register__row">
+                  <CardBody className="cardBody">
                     <Title fontSize="1.5em" color="#40A8F5" margin="0 0 20px 0">Sign up</Title>
 
                     <Separator>
@@ -187,35 +126,33 @@ function RegisterPage () {
                       prevent={true}
                     />
                   </CardBody>
-                  <img src={RegisterSVG} alt="" width="485px" />
+                  <img src={RegisterSVG} alt="" />
                 </Row>
-              </FirstPage>
-
-              <SecondPage>
-                <Title>Choose your avatar</Title>
-                <Row $justify="space-evenly">
-                  <CardItem $borderr="8px" $colors={colors} $padding="1.25em" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar1')} className={avatar === 'avatar1' && 'selected'}>
-                    <Avatar1 width="115px" height="115px" color="#40A8F5"/>
-                  </CardItem>
-                  <CardItem $borderr="8px" $colors={colors} $padding="1.25em" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar2')} className={avatar === 'avatar2' && 'selected'}>
-                    <Avatar2 width="115px" height="115px" color="#40A8F5"/>
-                  </CardItem>
-                  <CardItem $borderr="8px" $colors={colors} $padding="1.25em" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar3')} className={avatar === 'avatar3' && 'selected'}>
-                    <Avatar3 width="115px" height="115px" color="#40A8F5"/>
-                  </CardItem>
-                  <CardItem $borderr="8px" $colors={colors} $padding="1.25em" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar4')} className={avatar === 'avatar4' && 'selected'}>
-                    <Avatar4 width="115px" height="115px" color="#40A8F5"/>
-                  </CardItem>
-                </Row>
-                <Row $justify="end">
-                  <Button text="Previus" background="#40A8F5" borderr="4px" event={previusPage} prevent={true}/>
-                  <Button text="Register" background="#40A8F5" borderr="4px" disabled={avatar === ''} />
-                </Row>
-              </SecondPage>
-            </PagesContainer>
-          </Form>
-        </Slider>
-
+              </li>
+              <li>
+                  <Title textAlign="center">Choose your avatar</Title>
+                  <Row $justify="space-evenly" style={{flexWrap: 'wrap'}}>
+                    <CardItem $borderr="8px" $colors={colors} $padding="1.25em" width="155px" height="155px" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar1')} className={avatar === 'avatar1' && 'selected'}>
+                      <Avatar1 width="100%" height="100%" color="#40A8F5"/>
+                    </CardItem>
+                    <CardItem $borderr="8px" $colors={colors} $padding="1.25em" width="155px" height="155px" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar2')} className={avatar === 'avatar2' && 'selected'}>
+                      <Avatar2 width="100%" height="100%" color="#40A8F5"/>
+                    </CardItem>
+                    <CardItem $borderr="8px" $colors={colors} $padding="1.25em" width="155px" height="155px" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar3')} className={avatar === 'avatar3' && 'selected'}>
+                      <Avatar3 width="100%" height="100%" color="#40A8F5"/>
+                    </CardItem>
+                    <CardItem $borderr="8px" $colors={colors} $padding="1.25em" width="155px" height="155px" $background={colors.bg_Primary} onClick={() => changeAvatar('avatar4')} className={avatar === 'avatar4' && 'selected'}>
+                      <Avatar4 width="100%" height="100%" color="#40A8F5"/>
+                    </CardItem>
+                  </Row>
+                  <Row $justify="end">
+                    <Button text="Previus" background="#40A8F5" borderr="4px" event={previusPage} prevent={true}/>
+                    <Button text="Register" background="#40A8F5" borderr="4px" disabled={avatar === ''} />
+                  </Row>
+              </li>
+            </Slider>
+          </form>
+        </SliderContainer>
       </Card>
     </AuthPageStyled>
   );

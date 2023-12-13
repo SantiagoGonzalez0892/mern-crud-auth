@@ -11,4 +11,8 @@ export const AuthPageStyled = styled.div`
   min-height: calc(100vh - 72px);
   display: flex;
   align-items: center;
+  justify-content: center;
+  grid-column: 1 / 3;
 `;
+
+

@@ -1,14 +1,14 @@
-import { useForm } from 'react-hook-form';
-import {useNavigate} from 'react-router-dom';
-import {loginRequest} from '../api/auth';
-import Button from '../components/Button';
-import {Input, Row, Card, CardBody} from '../components/styledComponents/styledComponents';
-import {useAuth} from '../context/authContext';
-import {useTheme} from '../context/themeContext';
+import { Input, Row, Card, CardBody } from '../components/styledComponents/styledComponents';
 import { AuthPageStyled, Separator } from '../components/styledComponents/formComponents.styled';
-import LoginSVG from '/login.svg';
-import Title from '../components/Title';
+import { loginRequest } from '../api/auth';
+import { useNavigate } from 'react-router-dom';
+import { useTheme } from '../context/themeContext';
+import { useForm } from 'react-hook-form';
+import { useAuth } from '../context/authContext';
 import Paragraph from '../components/Paragraph';
+import LoginSVG from '/login.svg';
+import Button from '../components/Button';
+import Title from '../components/Title';
 
 
 function LoginPage () {
@@ -33,9 +33,9 @@ function LoginPage () {
 
   return (
     <AuthPageStyled>
-      <Card $padding="1.25em" $borderr="8px" $margin="0.937rem auto 0 auto" $colors={colors}>
-        <Row>
-          <CardBody style={{ width: '350px', height: '100%' }}>
+      <Card $borderr="8px" $colors={colors} $margin="20px">
+        <Row className="login__row">
+          <CardBody className="cardBody">
             <form action="" onSubmit={onSubmit}>
               <Title fontSize="1.5em" color="#40A8F5" margin="0 0 1.25rem 0">Sing in</Title>
               <Separator>
@@ -61,7 +61,7 @@ function LoginPage () {
               <Button text="Login" background="#40A8F5" borderr="4px"/>
             </form>
           </CardBody>
-          <img src={LoginSVG} alt="" width="485px" />
+          <img src={LoginSVG} alt="login" />
         </Row>
       </Card>
     </AuthPageStyled>

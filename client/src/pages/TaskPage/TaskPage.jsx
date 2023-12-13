@@ -143,8 +143,9 @@ function TaskPage () {
 
 
 
+    // <TaskPageStyled>
   return (
-    <TaskPageStyled>
+    <>
       <MainStyled>
 
         <Top $colors={colors}>
@@ -190,8 +191,9 @@ function TaskPage () {
         <NoTask  taskFiltered={taskFiltered} filter={filter} tasks={tasks} />
       </MainStyled>
       <Aside tasks={tasks} />
-    </TaskPageStyled>
+    </>
   )
+    // </TaskPageStyled>
 }
 
 export default TaskPage;
