@@ -78,12 +78,7 @@ button {
 }
 
 
-.register__row {
-  /* background: red; */
-  /* max-width: 500px; */
-  /* width: 50%; */
-  /* padding-right: 20px; */
-}
+
 
 
 
@@ -167,4 +162,18 @@ button {
 
 .next-section:hover, .prev-section:hover {
   background-color: #0056b3;
+}
+
+
+@media screen and (max-width: 992px) {
+  .Home-row {
+    flex-direction: column;
+    font-size: 12px;
+    max-width: 600px;
+  }
+  .Home-img__container {
+    margin-top: 20px;
+    max-height: 280px;
+    display: none;
+  }
 }
