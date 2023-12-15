@@ -1,10 +1,9 @@
+import { useAuth } from "../context/authContext";
 import { styled } from "styled-components";
-import {useAuth} from "../context/authContext";
 import Avatar1 from "./avatars/Avatar1";
 import Avatar2 from "./avatars/Avatar2";
 import Avatar3 from "./avatars/Avatar3";
 import Avatar4 from "./avatars/Avatar4";
-
 
 const AvatarContainer = styled.div`
   width: min-content;
@@ -30,6 +29,5 @@ function UserAvatar ({ width, height, color }) {
     </AvatarContainer>
   );
 }
-
 
 export default UserAvatar;

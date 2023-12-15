@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
 
-
 const TitleComponent = styled.h2`
   color: ${props => props.$color};
   margin: ${props => props.$margin};

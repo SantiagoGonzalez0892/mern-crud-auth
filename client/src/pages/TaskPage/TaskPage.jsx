@@ -1,17 +1,16 @@
 import { createTaskRequest, getTasksRequest, editTaskRequest, deleteTaskRequest, doneTaskRequest } from '../../api/tasks.js';
 import { createCategoryRequest, getCategoriesRequest } from '../../api/categories.js';
+import { TasksContainer, MainStyled, Top } from './TasPage.style';
 import { useEffect, useState } from 'react';
-import { FaPlus } from "react-icons/fa";
 import { useTheme } from '../../context/themeContext'
-import Button from '../../components/Button.jsx';
-import Aside from '../../components/Aside.jsx';
-import TaskCard from '../../components/TaskCard.jsx';
-import TaskForm from '../../components/TaskForm.jsx';
+import { FaPlus } from "react-icons/fa";
 import FilterBox from '../../components/FilterBox.jsx';
 import SearchBox from '../../components/SearchBox.jsx';
+import TaskCard from '../../components/TaskCard.jsx';
+import TaskForm from '../../components/TaskForm.jsx';
 import NoTask from '../../components/NoTask.jsx';
-
-import { TasksContainer, MainStyled, Top, TaskPageStyled } from './TasPage.style';
+import Button from '../../components/Button.jsx';
+import Aside from '../../components/Aside.jsx';
 
 
 

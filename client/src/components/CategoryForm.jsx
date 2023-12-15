@@ -16,13 +16,13 @@ const Circle = styled.div`
     border: 1px solid;
     transform: scale(1.4)
   }
-  &#blue { background-color: rgba(52, 152, 219, .6); }
   &#red { background-color: rgba(231, 76, 60, .6); }
+  &#blue { background-color: rgba(52, 152, 219, .6); }
+  &#pink { background-color: rgba(255, 89, 89, .6); }
+  &#teal { background-color: rgba(26, 188, 156, .6); }
   &#green { background-color: rgba(46, 204, 113, .6); }
   &#purple { background-color: rgba(155, 89, 182, .6); }
   &#yellow { background-color: rgba(241, 196, 15, .6); }
-  &#teal { background-color: rgba(26, 188, 156, .6); }
-  &#pink { background-color: rgba(255, 89, 89, .6); }
   &#orange { background-color: rgba(245, 176, 65, .6); }
 `;
 

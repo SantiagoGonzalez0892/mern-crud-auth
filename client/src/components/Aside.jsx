@@ -1,20 +1,20 @@
-import { styled } from "styled-components";
+import { useEffect, useState } from "react";
 import { useTheme } from '../context/themeContext';
+import { Col, Row } from "./styledComponents/styledComponents";
 import { useAuth } from '../context/authContext';
-import { Col, Row} from "./styledComponents/styledComponents";
-import {useEffect, useState} from "react";
+import { styled } from "styled-components";
 import UserAvatar from "./UserAvatar";
-import Title from "./Title";
 import Paragraph from "./Paragraph";
+import Title from "./Title";
 
 
 const AsideStyled = styled.aside`
-  background: ${({$colors}) => $colors.bg_Secondary};
-  margin-top: 0.937rem;
   padding: 20px;
-  border-radius: 8px 0 0 8px;
   flex-shrink: 0;
+  margin-top: 0.937rem;
+  border-radius: 8px 0 0 8px;
   box-shadow: 0 0 10px ${({$colors}) => $colors.shadowColor};
+  background: ${({$colors}) => $colors.bg_Secondary};
   @media (max-width: 768px) {
     display: none;
   }
@@ -27,20 +27,19 @@ const Left = styled.div`
   display: inline-block;
 `;
 const Right = styled.div`
-  background: #40A8F5;
   width: 110px;
   height: 110px;
   border-radius: 50%;
+  background: #40A8F5;
 `;
-
 const Span = styled.span`
-  display: inline-block;
   height: 18px;
   line-height: 18px;
   font-size: 1.2rem;
+  padding: 0 0.625rem;
+  display: inline-block;
   color: ${({$colors}) => $colors.color};
   border-left: 2px solid ${props => props.$color};
-  padding: 0 0.625rem;
 `;
 
 

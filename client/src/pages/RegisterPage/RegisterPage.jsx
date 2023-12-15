@@ -1,19 +1,19 @@
+import { PageVisualizer, CardItem, Slider, SliderContainer } from "./RegisterPage.style";
 import { Card, CardBody, Input, Row } from "../../components/styledComponents/styledComponents";
 import { Separator, AuthPageStyled } from '../../components/styledComponents/formComponents.styled.js'
 import { useEffect, useState } from "react";
 import { IoMdCheckmarkCircle } from "react-icons/io";
 import { registerRequest } from "../../api/auth";
-import { PageVisualizer, CardItem, Slider, SliderContainer } from "./RegisterPage.style";
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from "../../context/themeContext";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../context/authContext";
+import RegisterSVG from '/register.svg';
+import Paragraph from "../../components/Paragraph";
 import Avatar1 from "../../components/avatars/Avatar1";
 import Avatar2 from "../../components/avatars/Avatar2";
 import Avatar3 from "../../components/avatars/Avatar3";
 import Avatar4 from "../../components/avatars/Avatar4";
-import RegisterSVG from '/register.svg';
-import Paragraph from "../../components/Paragraph";
 import Button from "../../components/Button";
 import Title from "../../components/Title";
 

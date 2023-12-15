@@ -1,22 +1,20 @@
 import { styled } from "styled-components";
-import {useTheme} from "../context/themeContext";
+import { useTheme } from "../context/themeContext";
 
 const ButtonStyled = styled.button`
-  background: ${({$background}) => $background ? $background : 'transparent'};
-  color: ${({color}) => color ? color : 'white'};
-  padding: 5px 12px;
+  border: none;
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 0.625rem;
   font-size: 1em;
-
-  border: none;
+  padding: 5px 12px;
+  align-items: center;
+  justify-content: center;
+  color: ${({color}) => color ? color : 'white'};
+  background: ${({$background}) => $background ? $background : 'transparent'};
   border-radius: ${props => props.$borderr};
-
   &:disabled {
-    background: ${props => props.$colors.disabled};
     cursor: default;
+    background: ${props => props.$colors.disabled};
   }
 `;
 
@@ -28,7 +26,6 @@ function Button ({ background, color, text, icon, event, prevent, disabled, bord
     if (prevent) e.preventDefault();
     if (event) event();
   }
-
 
   return (
     <ButtonStyled 
@@ -43,6 +40,5 @@ function Button ({ background, color, text, icon, event, prevent, disabled, bord
     </ButtonStyled>
   );
 }
-
 
 export default Button;

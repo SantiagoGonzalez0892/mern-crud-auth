@@ -1,10 +1,10 @@
-import {Link} from "react-router-dom";
-import Button from "../../components/Button";
+import { Col, Row, Card } from "../../components/styledComponents/styledComponents";
+import { HomeComponent } from "./Home.style";
+import { useTheme } from "../../context/themeContext";
+import { Link } from "react-router-dom";
 import Paragraph from "../../components/Paragraph";
-import {Col, Row, Card} from "../../components/styledComponents/styledComponents";
+import Button from "../../components/Button";
 import Title from "../../components/Title";
-import {useTheme} from "../../context/themeContext";
-import {HomeComponent} from "./Home.style";
 
 function Home () {
   const { colors } = useTheme();

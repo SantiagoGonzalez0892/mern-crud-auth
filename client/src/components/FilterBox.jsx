@@ -1,52 +1,51 @@
-import { styled } from "styled-components";
-import { useTheme } from "../context/themeContext";
 import { FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa";
+import { useTheme } from "../context/themeContext";
+import { styled } from "styled-components";
 import { useRef } from "react";
 
 const Prueba = styled.div`
-  margin: 0.937rem;
   display: flex;
+  margin: 0.937rem;
   align-items: center;
   & ul {
     display: flex;
-    flex-wrap: nowrap;
     overflow-x: auto;
+    flex-wrap: nowrap;
     &::-webkit-scrollbar {
       display: none;
     }
     li {
-      text-align: center;
-      border-bottom: 2px solid #c0c0c0;
-      cursor: pointer;
       padding: 0 1em;
+      cursor: pointer;
+      text-align: center;
       white-space: nowrap;
-  
+      border-bottom: 2px solid #c0c0c0;
       &.selected {
         border-bottom: 2px solid #40A8F5;
       }
     }
   }
   button {
-    width: min-content;
-    margin: 0 15px;
     border: none;
-    background: transparent;
     display: flex;
-    align-items: center;
+    margin: 0 15px;
     color: #40A8F5;
+    width: min-content;
+    align-items: center;
+    background: transparent;
   }
 `;
 const MoveBtnPrev = styled(FaChevronCircleLeft)`
   flex-shrink: 0;
   cursor: pointer;
-  display: inline-block;
   font-size: 1.5em;
+  display: inline-block;
 `;
 const MoveBtnNext = styled(FaChevronCircleRight)`
   flex-shrink: 0;
   cursor: pointer;
-  display: inline-block;
   font-size: 1.5em;
+  display: inline-block;
 `;
 
 

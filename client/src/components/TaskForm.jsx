@@ -1,9 +1,9 @@
 import { Card, Input, Row, Col, Select, Textarea, BackgroundModal, CardFooter, CardHeader, CardBody } from "./styledComponents/styledComponents";
 import { FaTimes, FaPlus } from "react-icons/fa";
+import { useEffect } from "react";
 import { useTheme } from "../context/themeContext";
-import Button from "./Button";
-import {useEffect, useState} from "react";
 import CategoryForm from "./CategoryForm";
+import Button from "./Button";
 import Title from "./Title";
 
 function TaskForm ({ categories, taskForm, closeModal,changeCategoryModal, createCategory, setTaskForm, formSubmit }) {

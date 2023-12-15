@@ -4,25 +4,25 @@ import { styled } from "styled-components";
 
 
 const SwitchStyled = styled.div`
+  display: flex;
+  cursor: pointer;
+  position: relative;
   background: #343D5B;
   border-radius: 30px;
-  display: flex;
   align-items: center;
-  cursor: pointer;
   transition: background .4s ease;
-  position: relative;
   &::after {
+    top: -1px;
+    left: -1px;
     content: '';
-    background: white;
     width: 1.25em;
     height: 1.25em;
-    border: 1px solid rgba(0, 0, 0, .25);
-    box-shadow: 0 0 3px rgba(0, 0, 0, .75);
+    background: white;
     border-radius: 50%;
     position: absolute;
     transition: transform .4s ease;
-    top: -1px;
-    left: -1px;
+    border: 1px solid rgba(0, 0, 0, .25);
+    box-shadow: 0 0 3px rgba(0, 0, 0, .75);
   }
   &.actived {
     background: orange;
@@ -33,12 +33,12 @@ const SwitchStyled = styled.div`
 `;
 
 const Span = styled.span`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  color: white;
   width: 1.25em;
   height: 1.25em;
-  color: white;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
 `;
 
 

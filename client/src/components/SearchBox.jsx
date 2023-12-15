@@ -1,6 +1,6 @@
+import { Input, Row } from "./styledComponents/styledComponents";
 import { useTheme } from "../context/themeContext";
 import { FaSearch } from "react-icons/fa";
-import { Input, Row } from "./styledComponents/styledComponents";
 
 function SearchBox ({ search, handleSearchChange }) {
   const { colors } = useTheme();

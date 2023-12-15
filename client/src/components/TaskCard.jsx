@@ -1,6 +1,6 @@
 import { MdOutlineCheckBoxOutlineBlank, MdOutlineCheckBox } from "react-icons/md";
-import { useEffect, useState } from "react";
 import { Card, CardBody, CardFooter, CardHeader, Row } from "./styledComponents/styledComponents";
+import { useEffect, useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { MdModeEdit } from "react-icons/md";
 import { useTheme } from "../context/themeContext";

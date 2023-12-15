@@ -1,59 +1,52 @@
 import { Link, NavLink } from "react-router-dom";
+import { FaChevronDown } from "react-icons/fa";
+import { useTheme } from "../context/themeContext";
+import { useState } from "react";
 import { useAuth } from "../context/authContext";
 import { styled } from "styled-components";
-import { useTheme } from "../context/themeContext";
-import Switch from "./Switch";
-import { FaChevronDown } from "react-icons/fa";
-import { useState } from "react";
 import UserAvatar from "./UserAvatar";;
+import Switch from "./Switch";
 
 
 const NavStyled = styled.nav`
-  grid-column: 1 / 3;
-  padding: 1rem 1.375rem;
   display: flex;
-  justify-content: space-between;
-  box-shadow: 0 0 10px ${props => props.$colors.shadowColor};
-  background: ${props => props.$colors.bg_Secondary};
-  color: ${props => props.$colors.textColor};
+  grid-column: 1 / 3;
   position: relative;
+  padding: 1rem 1.375rem;
+  justify-content: space-between;
+  color: ${props => props.$colors.textColor};
+  background: ${props => props.$colors.bg_Secondary};
+  box-shadow: 0 0 10px ${props => props.$colors.shadowColor};
 `;
-
-
 const UlStyled = styled.ul`
+  gap: 2em;
   display: flex;
   align-items: center;
-  gap: 2em;
   & button {
     border: none;
-    background: unset;
     color: unset;
+    background: unset;
   }
 `;
-
-
 const NavLinkStyled = styled(NavLink)`
   position: relative;
   &.active::after {
     content: '';
-    width: 60%;
-    height: 2px;
-    border-radius: 3px;
-    background: grey;
-    position: absolute;
     bottom: 0;
     left: 50%;
+    width: 60%;
+    height: 2px;
+    background: grey;
+    border-radius: 3px;
+    position: absolute;
     transform: translateX(-50%);
   }
 `;
-
-
 const UserButton = styled.div`
-  padding: 0 8px;
   display: flex;
-  align-items: center;
+  padding: 0 8px;
   cursor: pointer;
-  // position: relative;
+  align-items: center;
   p {
     padding: 0 8px;
   }
@@ -72,23 +65,23 @@ const UserButton = styled.div`
 
 
 const Desplegable = styled.div`
+  right: 0;
+  top: 100%;
+  height: 0px;
+  cursor: default;
+  overflow: hidden;
+  min-width: 150px;
+  position: absolute;
+  border-radius: 8px;
+  width: max-content;
+  transition: height .3s;
   background: ${props => props.$colors && props.$colors.bg_Secondary};
   box-shadow: 0 0 10px ${props => props.$colors && props.$colors.shadowColor};
-  width: max-content;
-  min-width: 150px;
-  height: 0px;
-  overflow: hidden;
-  border-radius: 8px;
-  transition: height .3s;
-  cursor: default;
-  position: absolute;
-  top: 100%;
-  right: 0;
   ul {
     margin: 1.25rem;
     li {
-      margin: 0.625rem 0;
       display: flex;
+      margin: 0.625rem 0;
       button, a {
         width: 100%;
         text-align: start;

@@ -5,15 +5,15 @@ import TaskSVG from '/task.svg';
 const Container = styled.div`
   margin: auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 `;
 const P = styled.p`
   font-size: 1.3em;
   text-align: center;
   & span {
-    display: inline-block;
     color: #40A8F5;
+    display: inline-block;
   }
 `;
 

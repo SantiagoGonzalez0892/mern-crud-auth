@@ -3,122 +3,100 @@ import { styled } from "styled-components";
 
 
 export const Input = styled.input`
-  background: ${props => props.$colors && props.$colors.bg_Primary};
   color: grey;
   width: 100%;
   border: none;
-  border-radius: 4px;
-  padding: 7px 10px;
   font-weight: 300;
+  padding: 7px 10px;
+  border-radius: 4px;
+  background: ${props => props.$colors && props.$colors.bg_Primary};
   &:focus { 
     ${({$outline}) => $outline && 'outline: 1px solid #40A8F5;'} 
   }
 `;
-
 
 export const Row = styled.div`
   width: 100%;
+  gap: 0.937rem;
   display: flex;
   align-items: center;
-  gap: 0.937rem;
-  justify-content: ${({$justify}) => $justify && $justify};
   margin: ${({$margin}) => $margin && $margin};
   padding: ${({$padding}) => $padding && $padding};
-  border-radius: ${({$borderr}) => $borderr && $borderr};
   background: ${({$background}) => $background && $background};
+  border-radius: ${({$borderr}) => $borderr && $borderr};
+  justify-content: ${({$justify}) => $justify && $justify};
 `;
-
 
 export const Col = styled.div`
-  flex-basis: 100px;
   flex-grow: 1;
+  flex-basis: 100px;
   margin: ${({$margin}) => $margin && $margin};
   padding: ${({$padding}) => $padding && $padding};
-  border-radius: ${({$borderr}) => $borderr && $borderr};
   background: ${({$background}) => $background && $background};
+  border-radius: ${({$borderr}) => $borderr && $borderr};
 `;
-
-
-
-
 
 export const Select = styled.select`
-  background: ${({$colors}) => $colors && $colors.bg_Primary};
   color: grey;
   width: 100%;
   border: none;
-  border-radius: 4px;
-  padding: 7px 10px;
   font-weight: 300;
+  padding: 7px 10px;
+  border-radius: 4px;
+  background: ${({$colors}) => $colors && $colors.bg_Primary};
   &:focus { 
     ${({$outline}) => $outline && 'outline: 1px solid #40A8F5;'} 
   }
 `;
-
 
 export const Textarea = styled.textarea`
-  background: ${({$colors}) => $colors && $colors.bg_Primary};
   color: grey;
   width: 100%;
   border: none;
-  border-radius: 4px;
-  padding: 7px 10px;
   font-weight: 300;
+  padding: 7px 10px;
+  border-radius: 4px;
+  background: ${({$colors}) => $colors && $colors.bg_Primary};
   &:focus { 
     ${({$outline}) => $outline && 'outline: 1px solid #40A8F5;'} 
   }
 `;
 
-
 export const BackgroundModal = styled.div`
-  background: ${({$colors}) => $colors && $colors.bg_Transparent};
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   position: fixed;
-  top: 0;
-  left: 0;
+  align-items: center;
+  justify-content: center;
+  background: ${({$colors}) => $colors && $colors.bg_Transparent};
 `;
-
 
 export const InputSubmit = styled.input`
-  background: ${({$background}) => $background ? $background : 'transparent'};
-  color: ${({color}) => color ? color : 'white'};
-  padding: 5px 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
   border: none;
+  display: flex;
+  padding: 5px 12px;
   border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  color: ${({color}) => color ? color : 'white'};
+  background: ${({$background}) => $background ? $background : 'transparent'};
 `;
-
 
 export const SVG = styled.img`
   width: ${({width}) => width && width};
   height: ${({height}) => height && height};
 `;
 
-
-
-
-
-
-
-
-
-
-
-
-
 export const Card = styled.div`
-  padding: 1.25rem;
+  gap: 1.25rem;
   display: flex;
+  padding: 1.25rem;
   flex-direction: column;
   justify-content: start;
-  gap: 1.25rem;
   width: ${props => props.width && props.width};
   margin: ${props => props.$margin && props.$margin};
   background: ${props => props.$colors && props.$colors.bg_Secondary};
@@ -128,20 +106,20 @@ export const Card = styled.div`
   ${props => props.$background && `background: ${props.$background};`}
   ${props => props.$center && 'top: 50%; left: 50%; transform: translate(-50%, -50%);'}
   &.checked {
-    background: rgba(255, 255, 255, .2);
-    text-decoration: line-through;
     color: grey;
+    text-decoration: line-through;
+    background: rgba(255, 255, 255, .2);
     & span {
-      background: grey !important;
       color: black !important;
+      background: grey !important;
     }
   }
 `;
 
 export const CardHeader = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const CardBody = styled.div`

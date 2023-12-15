@@ -1,23 +1,21 @@
+import { AuthenticatedRoutes, UnathenticatedRoutes } from "./pages/ProtectedRoutes";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useTheme } from "./context/themeContext";
+import { styled } from "styled-components";
 import AuthProvider from "./context/authContext";
 import NavBar from "./components/NavBar";
-import { AuthenticatedRoutes, UnathenticatedRoutes } from "./pages/ProtectedRoutes";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import LoginPage from './pages/LoginPage'
 import TaskPage from "./pages/TaskPage/TaskPage";
-import {useTheme} from "./context/themeContext";
-import { styled } from "styled-components";
 import Home from "./pages/Home/Home";
 
 const AppComponent = styled.div`
   min-height: 100vh;
-  color: ${props => props.$colors.textColor};
-  background: ${props => props.$colors.bg_Primary};
-
   display: grid;
   grid-template-rows: 72px 1fr;
   grid-template-columns: 1fr minmax(280px, 350px);
-
+  color: ${props => props.$colors.textColor};
+  background: ${props => props.$colors.bg_Primary};
   @media screen and (max-width: 1200px) {
     grid-template-columns: 1fr minmax(280px, 300px);
   }
